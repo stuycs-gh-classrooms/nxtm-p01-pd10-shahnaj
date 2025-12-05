@@ -22,15 +22,33 @@ The first phase will be to work on this document.
 
 ## Phase 0: Selection, Analysis & Plan
 
-#### Selected Project: CHOOSE WISELY
+#### Selected Project: Breakout/Arkanoid 
 
 ### Necessary Features
 What are the core features that your program should have? These should be things that __must__ be implemented in order to make the program useable/playable, not extra features that could be added to make the program more interesting/fun.
+
+    A user controlled paddle.
+    This user controlled paddle can be moved using both the mouse and the left and right keys. 
+    A grid of bricks.
+    Each brick needs to break away as this ball from the paddle bounces around. 
+    A ball that bounces off the paddle, bricks, and side walls.
+    Bricks that disappear or are damaged when hit by the ball.
+    Loss of "life" if the ball gets past the paddle.
+
+In addition to basic gameplay, if you choose breakout your program must have the following:
+
+    A set number (more than one) of "lives".
+    The ability to play/pause the game.
+    The ability to reset the game.
+    Some continuation of the game if all the bricks have been destroyed.
+
 
 YOUR ANSWERS HERE
 
 ### Extra Features
 What are some features that are not essential to the program, but you would like to see (provided you have time after completing the necessary features. Theses can be customizations that are not part of the core requirements.
+
+It could be fun to add a simple drawing to the background /using shapes that doesn't necesarilly effect the program but would be a little unsure where to start and without that messing up the blocks that need to be destroyed and would be worried that it looks to messy. Could see if i could play around with the breakout main ball shape. after fully completing base code. 
 
 YOUR ANSWERS HERE
 
