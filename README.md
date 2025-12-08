@@ -28,10 +28,10 @@ The first phase will be to work on this document.
 What are the core features that your program should have? These should be things that __must__ be implemented in order to make the program useable/playable, not extra features that could be added to make the program more interesting/fun.
     A user controlled paddle that moves left and right (keyboard and/or mouse).
     A ball that moves and bounces off:
-    - the paddle 
-    - the side walls
-    - the top wall
-    - the bricks 
+    * the paddle 
+    * the side walls
+    * the top wall
+    * the bricks 
     A grid of bricks arranged in rows and columns 
     Bricks disappear when hit by the ball
     The player loses a "life" if the ball goes past the paddle.
@@ -54,24 +54,24 @@ Different brick colors for each row.
 How will you be using arrays in this project?
 
 1D Array:
-- I will use a 1D array for player's lives. 
+* I will use a 1D array for player's lives. 
 
 2D Array:
-- I will use a 2D array to store all bricks in the game. 
+* I will use a 2D array to store all bricks in the game. 
 
 
 ### Controls
 How will your program be controlled? List all keyboard commands and mouse interactions.
 
 Keyboard Commands:
-- Left arrow: move paddle left
-- Right arrow: move paddle right
-- Spacebar: Play/Pause
-- R: Reset the game
+* Left arrow: move paddle left
+* Right arrow: move paddle right
+* Spacebar: Play/Pause
+* R: Reset the game
 
 Mouse Control:
-- Mouse movement: Paddle follows the mouse's x position 
-- Mouse pressed: Could be used to restart 
+* Mouse movement: Paddle follows the mouse's x position 
+* Mouse pressed: Could be used to restart 
 
 
 ### Classes
@@ -84,13 +84,13 @@ CLASS NAME0 - Ball
   int r; // radius of the ball 
 - METHODS
 Ball(int startX, int startY)
-- sets up the ball's starting spot and speed 
+* sets up the ball's starting spot and speed 
 void display()
-- draws the ball on the screen 
+* draws the ball on the screen 
 void bounceX()
-- inverts dx, flips the ball horizontally when it hits a wall or brick 
+* inverts dx, flips the ball horizontally when it hits a wall or brick 
 void bounceY()
-- inverts dy, flips the ball vertically when it hits the paddle, top wall, or brick 
+* inverts dy, flips the ball vertically when it hits the paddle, top wall, or brick 
 
 CLASS NAME1 - Brick
 - Instance variables:
@@ -99,8 +99,8 @@ int w,h; // width and height of the brick
 boolean active; // true if the brick hasn't been hit yet 
 - METHODS
 Brick(int x, int y, int w, int h)
-- sets up the brick 
+* sets up the brick 
 void display()
-- draws the brick if it is still active
+* draws the brick if it is still active
 boolean isHit(int ballX, int ballY)
-- check if the ball overlaps this brick / if the ball hits the brick 
+* check if the ball overlaps this brick / if the ball hits the brick 
