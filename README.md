@@ -79,28 +79,28 @@ What classes will you be creating for this project? Include the instance variabl
 
 CLASS NAME0 - Ball 
 - Instance variables:
-  int x, y: // position of the ball 
-  int dx, dy; // velocity / how fast the ball is moving in each direction 
-  int r; // radius of the ball 
+*  int x, y: // position of the ball 
+*  int dx, dy; // velocity / how fast the ball is moving in each direction 
+*  int r; // radius of the ball 
 - METHODS
-Ball(int startX, int startY)
+* Ball(int startX, int startY)
 * sets up the ball's starting spot and speed 
-void display()
+* void display()
 * draws the ball on the screen 
-void bounceX()
+* void bounceX()
 * inverts dx, flips the ball horizontally when it hits a wall or brick 
-void bounceY()
+* void bounceY()
 * inverts dy, flips the ball vertically when it hits the paddle, top wall, or brick 
 
 CLASS NAME1 - Brick
 - Instance variables:
-int x,y; // position of the brick 
-int w,h; // width and height of the brick 
-boolean active; // true if the brick hasn't been hit yet 
+* int x,y; // position of the brick 
+* int w,h; // width and height of the brick 
+* boolean active; // true if the brick hasn't been hit yet 
 - METHODS
-Brick(int x, int y, int w, int h)
+* Brick(int x, int y, int w, int h)
 * sets up the brick 
-void display()
+* void display()
 * draws the brick if it is still active
-boolean isHit(int ballX, int ballY)
+* boolean isHit(int ballX, int ballY)
 * check if the ball overlaps this brick / if the ball hits the brick 
