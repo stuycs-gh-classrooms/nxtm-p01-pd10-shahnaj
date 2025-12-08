@@ -84,13 +84,13 @@ CLASS NAME0 - Ball
 *  int r; // radius of the ball 
 - METHODS
 * Ball(int startX, int startY)
-* sets up the ball's starting spot and speed 
+  * sets up the ball's starting spot and speed 
 * void display()
-* draws the ball on the screen 
+  * draws the ball on the screen 
 * void bounceX()
-* inverts dx, flips the ball horizontally when it hits a wall or brick 
+  * inverts dx, flips the ball horizontally when it hits a wall or brick 
 * void bounceY()
-* inverts dy, flips the ball vertically when it hits the paddle, top wall, or brick 
+  * inverts dy, flips the ball vertically when it hits the paddle, top wall, or brick 
 
 CLASS NAME1 - Brick
 - Instance variables:
@@ -99,8 +99,8 @@ CLASS NAME1 - Brick
 * boolean active; // true if the brick hasn't been hit yet 
 - METHODS
 * Brick(int x, int y, int w, int h)
-* sets up the brick 
+  * sets up the brick 
 * void display()
-* draws the brick if it is still active
+  * draws the brick if it is still active
 * boolean isHit(int ballX, int ballY)
-* check if the ball overlaps this brick / if the ball hits the brick 
+  * check if the ball overlaps this brick / if the ball hits the brick 
