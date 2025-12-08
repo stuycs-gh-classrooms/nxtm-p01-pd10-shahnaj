@@ -26,64 +26,81 @@ The first phase will be to work on this document.
 
 ### Necessary Features
 What are the core features that your program should have? These should be things that __must__ be implemented in order to make the program useable/playable, not extra features that could be added to make the program more interesting/fun.
-
-    A user controlled paddle.
-    This user controlled paddle can be moved using both the mouse and the left and right keys. 
-    A grid of bricks.
-    Each brick needs to break away as this ball from the paddle bounces around. 
-    A ball that bounces off the paddle, bricks, and side walls.
-    Bricks that disappear or are damaged when hit by the ball.
-    Loss of "life" if the ball gets past the paddle.
+    A user controlled paddle that moves left and right (keyboard and/or mouse).
+    A ball that moves and bounces off:
+    - the paddle 
+    - the side walls
+    - the top wall
+    - the bricks 
+    A grid of bricks arranged in rows and columns 
+    Bricks disappear when hit by the ball
+    The player loses a "life" if the ball goes past the paddle.
 
 In addition to basic gameplay, if you choose breakout your program must have the following:
-
     A set number (more than one) of "lives".
     The ability to play/pause the game.
     The ability to reset the game.
     Some continuation of the game if all the bricks have been destroyed.
 
 
-YOUR ANSWERS HERE
-
 ### Extra Features
 What are some features that are not essential to the program, but you would like to see (provided you have time after completing the necessary features. Theses can be customizations that are not part of the core requirements.
 
-It could be fun to add a simple drawing to the background /using shapes that doesn't necesarilly effect the program but would be a little unsure where to start and without that messing up the blocks that need to be destroyed and would be worried that it looks to messy. Could see if i could play around with the breakout main ball shape. after fully completing base code. 
-
-YOUR ANSWERS HERE
+A decorative background made with simple shapes. 
+Changing the ball's color or shape.
+Different brick colors for each row.
 
 ### Array Usage
 How will you be using arrays in this project?
 
 1D Array:
-- YOUR ANSER HERE
+- I will use a 1D array for player's lives. 
 
 2D Array:
-- YOUR ANSWER HERE
+- I will use a 2D array to store all bricks in the game. 
 
 
 ### Controls
 How will your program be controlled? List all keyboard commands and mouse interactions.
 
 Keyboard Commands:
-- LIST OF COMMANDS HERE
+- Left arrow: move paddle left
+- Right arrow: move paddle right
+- Spacebar: Play/Pause
+- R: Reset the game
 
 Mouse Control:
-- Mouse movement:
-- Mouse pressed:
+- Mouse movement: Paddle follows the mouse's x position 
+- Mouse pressed: Could be used to restart 
 
 
 ### Classes
 What classes will you be creating for this project? Include the instance variables and methods that you believe you will need. You will be required to create at least 2 different classes. If you are going to use classes similar to those we've made for previous assignments, you will have to add new features to them.
 
-CLASS NAME0
+CLASS NAME0 - Ball 
 - Instance variables:
-  - LIST INSTANCE VARS HERE
+  int x, y: // position of the ball 
+  int dx, dy; // velocity / how fast the ball is moving in each direction 
+  int r; // radius of the ball 
 - METHODS
-  - LIST METHODS HERE
+Ball(int startX, int startY)
+- sets up the ball's starting spot and speed 
+void display()
+- draws the ball on the screen 
+void bounceX()
+- inverts dx, flips the ball horizontally when it hits a wall or brick 
+void bounceY()
+- inverts dy, flips the ball vertically when it hits the paddle, top wall, or brick 
 
-CLASS NAME1
+CLASS NAME1 - Brick
 - Instance variables:
-  - LIST INSTANCE VARS HERE
+int x,y; // position of the brick 
+int w,h; // width and height of the brick 
+boolean active; // true if the brick hasn't been hit yet 
 - METHODS
-  - LIST METHODS HERE
+Brick(int x, int y, int w, int h)
+- sets up the brick 
+void display()
+- draws the brick if it is still active
+boolean isHit(int ballX, int ballY)
+- check if the ball overlaps this brick / if the ball hits the brick 
