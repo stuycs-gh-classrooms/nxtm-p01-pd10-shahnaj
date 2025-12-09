@@ -26,7 +26,7 @@ The first phase will be to work on this document.
 
 ### Necessary Features
 What are the core features that your program should have? These should be things that __must__ be implemented in order to make the program useable/playable, not extra features that could be added to make the program more interesting/fun.
-    A user controlled paddle that moves left and right (keyboard and/or mouse).
+    A user controlled paddle that moves left and right (keyboard).
     A ball that moves and bounces off:
     * the paddle 
     * the side walls
@@ -49,12 +49,17 @@ What are some features that are not essential to the program, but you would like
 A decorative background made with simple shapes. 
 Changing the ball's color or shape.
 Different brick colors for each row.
+keyboard-only paddle movement
+Possible use of PVector to organize the ball’s position and velocity.
+
 
 ### Array Usage
 How will you be using arrays in this project?
 
 1D Array:
-* I will use a 1D array for player's lives. 
+* I will use a 1D array to store the player’s lives visually (like hearts or life markers). 
+This gives more flexibility than a single variable and allows each life to be tracked individually.
+// side note unsure about the 1D array right now maybe I could use a variable instead like suggested  
 
 2D Array:
 * I will use a 2D array to store all bricks in the game. 
@@ -67,11 +72,10 @@ Keyboard Commands:
 * Left arrow: move paddle left
 * Right arrow: move paddle right
 * Spacebar: Play/Pause
-* R: Reset the game
+* R: Reset the game (this will be the only restart control for clarity)
 
 Mouse Control:
-* Mouse movement: Paddle follows the mouse's x position 
-* Mouse pressed: Could be used to restart 
+Mouse is not used for controlling the paddle to avoid interference/confusion.
 
 
 ### Classes
@@ -79,28 +83,54 @@ What classes will you be creating for this project? Include the instance variabl
 
 CLASS NAME0 - Ball 
 - Instance variables:
-*  int x, y: // position of the ball 
-*  int dx, dy; // velocity / how fast the ball is moving in each direction 
-*  int r; // radius of the ball 
+  *  int x, y: // position of the ball 
+  *  int dx, dy; // velocity / how fast the ball is moving in each direction 
+  *  int r; // radius of the ball 
 - METHODS
 * Ball(int startX, int startY)
   * sets up the ball's starting spot and speed 
 * void display()
   * draws the ball on the screen 
-* void bounceX()
-  * inverts dx, flips the ball horizontally when it hits a wall or brick 
-* void bounceY()
-  * inverts dy, flips the ball vertically when it hits the paddle, top wall, or brick 
-
+* void bounceX() / void bounceY() or possibly one combined bounce() method for readability
 CLASS NAME1 - Brick
 - Instance variables:
-* int x,y; // position of the brick 
-* int w,h; // width and height of the brick 
-* boolean active; // true if the brick hasn't been hit yet 
+  * int x,y; // position of the brick 
+  * int w,h; // width and height of the brick 
+  * boolean active; // true if the brick hasn't been hit yet 
 - METHODS
 * Brick(int x, int y, int w, int h)
   * sets up the brick 
 * void display()
   * draws the brick if it is still active
 * boolean isHit(int ballX, int ballY)
-  * check if the ball overlaps this brick / if the ball hits the brick 
+  * check if the ball overlaps this brick / if the ball hits the brick
+
+CLASS NAME2 – Paddle
+- Instance variables:
+  * int x, y; // position of the paddle
+  * int w, h; // width and height of the paddle
+  * int speed; // how fast the paddle moves left or right
+
+- METHODS:
+  * Paddle(int x, int y)
+    * sets up the paddle's starting position and size
+  * void display()
+    * draws the paddle on the screen 
+  * void moveLeft()
+    * moves the paddle left by subtracting speed from x 
+  * void moveRight()
+   * moves the paddle right by adding speed to x 
+  * boolean collide(int ballX, int ballY, int r)
+    * checks if the ball overlaps the paddle and returns true if they collide
+   
+Clarifications Based on Feedback:
+- Restarting will only use the "R" key.
+- I will include a boolean for when the game is running and paused.
+- I will only use keyboard controls to avoid conflicts with mouse movement. 
+- A Paddle class was added.
+- The 1D lives array will be used to visually represent individual lives. // tbd might remove and try something else
+- Possible use of PVector for movement organization.
+
+
+ 
+  
