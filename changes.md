@@ -59,6 +59,7 @@ How will you be using arrays in this project?
 1D Array:
 * I will use a 1D array to store the player’s lives visually (like hearts or life markers). 
 This gives more flexibility than a single variable and allows each life to be tracked individually.
+// side note unsure about the 1D array right now maybe I could use a variable instead like suggested  
 
 2D Array:
 * I will use a 2D array to store all bricks in the game. 
@@ -127,7 +128,7 @@ Clarifications Based on Feedback:
 - I will include a boolean for when the game is running and paused.
 - I will only use keyboard controls to avoid conflicts with mouse movement. 
 - A Paddle class was added.
-- The 1D lives array will be used to visually represent individual lives.
+- The 1D lives array will be used to visually represent individual lives. // tbd might remove and try something else
 - Possible use of PVector for movement organization.
 
 
